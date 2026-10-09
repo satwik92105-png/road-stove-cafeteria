@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Road Stove Cafeteria | Best Fast Food in Patna City</title>
+    <meta name="description" content="Road Stove Cafeteria - Patna's hidden gem for delicious momos, Chinese dishes, sandwiches, and shakes. Pocket-friendly cafe with generous portions.">
+    <meta name="keywords" content="Cafe in Patna, Fast Food Patna City, Momos Patna, Chinese food, Road Stove Cafeteria">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            /* Color Palette: Charcoal & Vibrant Orange/Red */
+            --bg-dark: hsl(220, 15%, 8%);
+            --bg-card: hsl(220, 15%, 12%);
+            --bg-card-glass: hsla(220, 15%, 16%, 0.7);
+            
+            --primary: hsl(20, 100%, 55%); /* Vibrant Orange */
+            --primary-hover: hsl(20, 100%, 45%);
+            --secondary: hsl(350, 90%, 55%); /* Energetic Red */
+            
+            --text-main: hsl(0, 0%, 95%);
+            --text-muted: hsl(0, 0%, 75%);
+            
+            --border-color: hsla(0, 0%, 100%, 0.1);
+            
+            /* Typography */
+            --font-body: 'Inter', sans-serif;
+            --font-heading: 'Outfit', sans-serif;
+            
+            /* Shadows & Transitions */
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+            --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+            --shadow-glow: 0 0 20px hsla(20, 100%, 55%, 0.3);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utilities */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        .section-padding {
+            padding: 6rem 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-family: var(--font-heading);
+            cursor: pointer;
+            border: none;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            box-shadow: var(--shadow-glow);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px hsla(20, 100%, 55%, 0.5);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Navbar */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1.5rem 0;
+            transition: var(--transition);
+        }
+
+        .header.scrolled {
+            background: hsla(220, 15%, 8%, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo i {
+            color: var(--primary);
+            font-size: 1.8rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: transparent;
+            border: none;
+            color: var(--text-main);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 5rem;
+            background: radial-gradient(circle at 80% 20%, hsla(20, 100%, 55%, 0.15) 0%, transparent 40%),
+                        radial-gradient(circle at 20% 80%, hsla(350, 90%, 55%, 0.15) 0%, transparent 40%);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            z-index: 2;
+        }
+
+        .rating-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--bg-card-glass);
+            backdrop-filter: blur(5px);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .rating-badge .stars {
+            color: #fbbf24;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-inline: auto;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* About Section */
+        .about-section {
+            background-color: var(--bg-card);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .features-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: hsla(20, 100%, 55%, 0.1);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .feature-text h4 {
+            margin-bottom: 0.25rem;
+        }
+
+        .feature-text p {
+            font-size: 0.85rem;
+            margin-bottom: 0;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            aspect-ratio: 4/5;
+            background: linear-gradient(45deg, var(--bg-dark), var(--bg-card));
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .about-image i {
+            font-size: 5rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            opacity: 0.5;
+        }
+
+        /* Menu Section */
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .menu-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .menu-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        .menu-img-placeholder {
+            height: 200px;
+            background: linear-gradient(135deg, hsla(20, 100%, 55%, 0.1), hsla(350, 90%, 55%, 0.1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--primary);
+        }
+
+        .menu-content {
+            padding: 1.5rem;
+        }
+
+        .menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .menu-title h3 {
+            font-size: 1.25rem;
+        }
+
+        .menu-price {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        .menu-desc {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            background: hsla(0, 0%, 100%, 0.05);
+            color: var(--text-muted);
+        }
+
+        .tag.popular {
+            background: hsla(20, 100%, 55%, 0.1);
+            color: var(--primary);
+        }
+
+        /* Services */
+        .services-section {
+            background-color: var(--bg-card);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            background: var(--bg-dark);
+            border-radius: 15px;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            border-color: var(--secondary);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: white;
+            box-shadow: var(--shadow-glow);
+        }
+
+        .service-card h3 {
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Testimonials */
+        .testimonials-slider {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .quote-icon {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            font-size: 2rem;
+            color: hsla(20, 100%, 55%, 0.1);
+        }
+
+        .stars {
+            color: #fbbf24;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .customer {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .customer-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        /* Contact & Location */
+        .contact-section {
+            background: linear-gradient(to bottom, var(--bg-card), var(--bg-dark));
+            border-top: 1px solid var(--border-color);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .info-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.2rem;
+            padding: 1.5rem;
+            background: var(--bg-card-glass);
+            border-radius: 15px;
+            border: 1px solid var(--border-color);
+        }
+
+        .info-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: hsla(20, 100%, 55%, 0.1);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .info-content h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .info-content p {
+            color: var(--text-muted);
+            margin-bottom: 0.25rem;
+        }
+
+        .map-container {
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            height: 100%;
+            min-height: 400px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: hsl(220, 15%, 5%);
+            padding: 4rem 0 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand p {
+            color: var(--text-muted);
+            margin: 1.5rem 0;
+            max-width: 350px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--bg-card);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--border-color);
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .footer-links h4 {
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-links ul {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Floating WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.4);
+            z-index: 100;
+            transition: var(--transition);
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(37, 211, 102, 0.6);
+        }
+
+        /* Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-grid, .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .map-container {
+                min-height: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--bg-card);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
+                border-bottom: 1px solid var(--border-color);
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+                transition: clip-path 0.4s ease-in-out;
+            }
+
+            .nav-links.active {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .features-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-fire-burner"></i>
+                Road Stove
+            </a>
+            <nav class="nav-links" id="navLinks">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#menu">Menu</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
+                <a href="https://roadstove.dotpe.in" target="_blank" class="btn btn-outline" style="padding: 0.5rem 1.2rem; font-size: 0.9rem;">Order Online</a>
+            </nav>
+            <button class="mobile-menu-btn" id="menuBtn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content reveal">
+                <div class="rating-badge">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                    <span>4.8/5 (100+ Reviews)</span>
+                </div>
+                <h1>Experience the <span class="gradient-text">Energetic Vibe</span> of Street Food</h1>
+                <p>Welcome to Road Stove Cafeteria — Patna City's hidden gem for mouth-watering momos, sizzling Chinese dishes, and refreshing shakes. Generous portions at pocket-friendly prices.</p>
+                <div class="hero-btns">
+                    <a href="#menu" class="btn btn-primary">Explore Menu</a>
+                    <a href="https://roadstove.dotpe.in" target="_blank" class="btn btn-outline">Order on Dotpe</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section section-padding" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image reveal">
+                    <i class="fa-solid fa-utensils"></i>
+                </div>
+                <div class="about-text reveal">
+                    <h2>A <span class="gradient-text">Hidden Gem</span> in Patna City</h2>
+                    <p>Located near Marwari School at Chowk Nai Sadak, Road Stove Cafeteria has quickly become the go-to spot for students and the young crowd. We believe that great food doesn't have to break the bank.</p>
+                    <p>Our chefs use fresh ingredients to craft the ultimate street food experience, bringing you flavors that make you want to come back for more.</p>
+                    
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-wallet"></i></div>
+                            <div class="feature-text">
+                                <h4>Pocket-Friendly</h4>
+                                <p>Delicious meals that fit perfectly in your student budget.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-bowl-food"></i></div>
+                            <div class="feature-text">
+                                <h4>Generous Portions</h4>
+                                <p>We make sure you never leave our cafeteria hungry.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-pepper-hot"></i></div>
+                            <div class="feature-text">
+                                <h4>Spicy & Flavorful</h4>
+                                <p>Authentic taste packed into every single bite.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-face-smile"></i></div>
+                            <div class="feature-text">
+                                <h4>Cozy Vibe</h4>
+                                <p>The perfect hangout spot for you and your friends.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Famous Menu Section -->
+    <section class="menu-section section-padding" id="menu">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Our <span class="gradient-text">Famous</span> Highlights</h2>
+                <p>Check out the dishes that made us famous across Patna City. (Prices are sample demo)</p>
+            </div>
+            
+            <div class="menu-grid">
+                <!-- Menu Item 1 -->
+                <div class="menu-card reveal">
+                    <div class="menu-img-placeholder">
+                        <i class="fa-solid fa-dumpling"></i>
+                    </div>
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <div class="menu-title">
+                                <h3>Road Stove Special Momos</h3>
+                            </div>
+                            <div class="menu-price">₹120</div>
+                        </div>
+                        <p class="menu-desc">Steamed to perfection and tossed in our signature spicy sauce. A true crowd favorite.</p>
+                        <div class="tags">
+                            <span class="tag popular">Most Popular</span>
+                            <span class="tag">Spicy</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 2 -->
+                <div class="menu-card reveal">
+                    <div class="menu-img-placeholder">
+                        <i class="fa-solid fa-bowl-rice"></i>
+                    </div>
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <div class="menu-title">
+                                <h3>Chilli Paneer Combo</h3>
+                            </div>
+                            <div class="menu-price">₹150</div>
+                        </div>
+                        <p class="menu-desc">Crispy paneer cubes in fiery sauce served with Hakka Noodles or Fried Rice.</p>
+                        <div class="tags">
+                            <span class="tag popular">Chef's Choice</span>
+                            <span class="tag">Chinese</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 3 -->
+                <div class="menu-card reveal">
+                    <div class="menu-img-placeholder">
+                        <i class="fa-solid fa-burger"></i>
+                    </div>
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <div class="menu-title">
+                                <h3>Grilled Club Sandwich</h3>
+                            </div>
+                            <div class="menu-price">₹90</div>
+                        </div>
+                        <p class="menu-desc">Triple layered goodness loaded with fresh veggies, cheese, and our secret mayo.</p>
+                        <div class="tags">
+                            <span class="tag">Quick Bite</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 4 -->
+                <div class="menu-card reveal">
+                    <div class="menu-img-placeholder">
+                        <i class="fa-solid fa-martini-glass"></i>
+                    </div>
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <div class="menu-title">
+                                <h3>Thick Cold Coffee</h3>
+                            </div>
+                            <div class="menu-price">₹80</div>
+                        </div>
+                        <p class="menu-desc">Rich, creamy, and blended with premium coffee and chocolate syrup.</p>
+                        <div class="tags">
+                            <span class="tag popular">Must Try</span>
+                            <span class="tag">Beverage</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center" style="margin-top: 3rem;">
+                <a href="https://roadstove.dotpe.in" target="_blank" class="btn btn-outline">View Full Menu on Dotpe</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section section-padding" id="services">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>How We <span class="gradient-text">Serve You</span></h2>
+                <p>Enjoy our delicious food wherever you are, however you like.</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card reveal">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-store"></i>
+                    </div>
+                    <h3>Dine-In</h3>
+                    <p>Enjoy our vibrant ambiance, great music, and friendly service. Perfect for hanging out with friends.</p>
+                </div>
+                
+                <div class="service-card reveal">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-box"></i>
+                    </div>
+                    <h3>Takeaway</h3>
+                    <p>In a rush? Grab your favorite meals on the go. Fast packaging that keeps your food hot and fresh.</p>
+                </div>
+                
+                <div class="service-card reveal">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-motorcycle"></i>
+                    </div>
+                    <h3>Home Delivery</h3>
+                    <p>Craving food at home? Order directly via Dotpe or find us on Swiggy for quick doorstep delivery.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section section-padding" style="background-color: var(--bg-dark);">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>What Our <span class="gradient-text">Customers Say</span></h2>
+                <p>With a 4.8/5 rating from hundreds of reviews, see why Patna City loves us. (Demo Reviews)</p>
+            </div>
+            
+            <div class="testimonials-slider">
+                <div class="testimonial-card reveal">
+                    <i class="fa-solid fa-quote-right quote-icon"></i>
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Absolutely love their momos! The portion size is huge for the price. Definitely a hidden gem in Patna City. I visit here every weekend with my college friends."</p>
+                    <div class="customer">
+                        <div class="customer-avatar">R</div>
+                        <div>
+                            <h4>Rahul S.</h4>
+                            <p style="font-size: 0.8rem; color: var(--text-muted);">Local Guide</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card reveal">
+                    <i class="fa-solid fa-quote-right quote-icon"></i>
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                    <p class="testimonial-text">"The Chinese combo here is unmatched. It's affordable, tasty, and the service is quite fast. highly recommend their thick cold coffee along with the sandwiches!"</p>
+                    <div class="customer">
+                        <div class="customer-avatar">P</div>
+                        <div>
+                            <h4>Priya V.</h4>
+                            <p style="font-size: 0.8rem; color: var(--text-muted);">Student</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Location -->
+    <section class="contact-section section-padding" id="contact">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Visit <span class="gradient-text">Us</span></h2>
+                <p>We're open every day. Drop by or give us a call!</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-info reveal">
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <div class="info-content">
+                            <h4>Our Address</h4>
+                            <p>Opposite PNB Bank, Chowk Nai Sadak,</p>
+                            <p>Near Marwari School, Patna City,</p>
+                            <p>Patna, Bihar 800008</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fa-solid fa-clock"></i></div>
+                        <div class="info-content">
+                            <h4>Opening Hours</h4>
+                            <p>Monday - Sunday</p>
+                            <p style="font-weight: 600; color: var(--text-main);">11:00 AM - 10:00 PM</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+                        <div class="info-content">
+                            <h4>Contact Us</h4>
+                            <p>Give us a call for takeaway or queries</p>
+                            <p style="font-weight: 600; color: var(--text-main); font-size: 1.2rem;">+91 62033 00806</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="map-container reveal">
+                    <!-- Google Maps Iframe (Location approximate to Patna City) -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14392.204558231902!2d85.21558266016147!3d25.59489502758117!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed5f5b61585223%3A0xcfd64a75ab0a4a9c!2sPatna%20City%，%20Patna%2C%20Bihar!5e0!3m2!1sen!2sin!4v1689000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <i class="fa-solid fa-fire-burner"></i>
+                        Road Stove
+                    </a>
+                    <p>Your friendly neighborhood spot for the best momos, fast food, and energetic vibes in Patna City. Taste the difference today!</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="https://roadstove.dotpe.in" target="_blank">Order Online</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Partners</h4>
+                    <ul>
+                        <li><a href="#">Swiggy</a></li>
+                        <li><a href="#">Dotpe</a></li>
+                        <li><a href="#">Google Maps</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Road Stove Cafeteria. All rights reserved. | Demo Website</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/916203300806" target="_blank" class="whatsapp-float" aria-label="Chat with us on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script>
+        // Navbar scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = menuBtn.querySelector('i');
+            if(navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuBtn.querySelector('i').classList.remove('fa-xmark');
+                menuBtn.querySelector('i').classList.add('fa-bars');
+            });
+        });
+
+        // Scroll Reveal Animation
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        // Trigger once on load
+        reveal();
+    </script>
+</body>
+</html>
